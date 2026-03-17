@@ -3,74 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueHorizon | Boat Tours Montenegro</title>
+    <title>Fortuna - Taxi Boat | Montenegro Tours</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">BlueHorizon</div>
+        <div class="logo">Fortuna - Taxi Boat</div>
         <ul class="nav-links">
             <li><a href="#home" class="lang" data-en="Home" data-mne="Početna">Home</a></li>
-            <li><a href="#gallery" class="lang" data-en="Photos" data-mne="Slike">Photos</a></li>
+            <li><a href="#destinations" class="lang" data-en="Destinations" data-mne="Destinacije">Destinations</a></li>
+            <li><a href="#gallery" class="lang" data-en="Gallery" data-mne="Galerija">Gallery</a></li>
             <li><a href="#reserve" class="lang" data-en="Reserve" data-mne="Rezervacija">Reserve</a></li>
         </ul>
         <button id="lang-toggle">MNE</button>
     </nav>
 
-  <header id="home" class="hero">
-    <video 
-        id="heroVideo"
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        preload="auto"
-        poster="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1600&q=80"
-        class="hero-video">
-        <source src="https://github.com/NemanjaR425/Fortuna-boat/blob/4ddcab7007aa6b6aaed9e50fcf661dc2ebfe7f7d/Intro%20Demo(1).mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <header id="home" class="hero">
+        <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-video">
+            <source src="H:\Poso\Fortuna\Fortuna website\video test\Intro Demo(1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <div class="hero-content">
-        <h1 class="lang" data-en="Explore the Adriatic" data-mne="Istražite Jadran">Explore the Adriatic</h1>
-        <p class="lang" data-en="Unforgettable boat tours in Boka Bay." data-mne="Nezaboravne ture brodom u Boki Kotorskoj.">Unforgettable boat tours in Boka Bay.</p>
-        <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
-    </div>
-</header>
+        <div class="hero-content">
+    <h1 class="lang" data-en="Fortuna - Taxi Boat" data-mne="Fortuna - Taxi Boat">
+        Fortuna - Taxi Boat
+    </h1>
 
-    <section id="gallery" class="gallery-section">
-        <h2 class="lang" data-en="Our Adventures" data-mne="Naše Avanture">Our Adventures</h2>
+    <p class="hero-intro lang" 
+       data-en="Fast and reliable boat transfers and tours in the heart of Boka Bay." 
+       data-mne="Brzi i pouzdani transferi i ture brodom u srcu Boke Kotorske.">
+       <strong>Fast and reliable boat transfers and tours in the heart of Boka Bay.</strong>
+    </p>
+
+    <p class="hero-description lang" 
+       data-en="Welcome to your gateway to the Adriatic! Whether you’re chasing the hidden glow of the Blue Cave or looking to soak in the medieval charm of Herceg Novi, we provide the ultimate boat taxi experience in one of the world’s most stunning bays. Skip the traffic and embrace the breeze. We specialize in fast, reliable, and scenic transfers that turn a simple commute into the highlight of your holiday."
+       data-mne="Dobrodošli na vašu kapiju Jadrana! Bilo da tražite skriveni sjaj Plave Špilje ili želite da uživate u srednjovjekovnom šarmu Herceg Novog, pružamo vam vrhunsko iskustvo taxi broda u jednom od najljepših zaliva na svijetu. Izbjegnite gužvu u saobraćaju i prepustite se povjetarcu. Specijalizovani smo za brze, pouzdane i slikovite transfere koji običnu vožnju pretvaraju u vrhunac vašeg odmora.">
+       Welcome to your gateway to the Adriatic! Whether you’re chasing the hidden glow of the Blue Cave or looking to soak in the medieval charm of Herceg Novi, we provide the ultimate boat taxi experience in one of the world’s most stunning bays. Skip the traffic and embrace the breeze. We specialize in fast, reliable, and scenic transfers that turn a simple commute into the highlight of your holiday.
+    </p>
+
+    <a href="#destinations" class="btn lang" data-en="Explore Tours" data-mne="Istražite izlete">Explore Tours</a>
+</div>
+    </header>
+
+    <section id="destinations" class="gallery-section">
+        <h2 class="lang" data-en="Our Destinations" data-mne="Naše Destinacije">Our Destinations</h2>
         <div class="gallery-grid">
-            <div class="photo-card"><img src="https://i.postimg.cc/pVmw1c5G/boat_(10).jpg" onclick="openLightbox(0)" alt="Boat 1"></div>
-            <div class="photo-card"><img src="https://i.postimg.cc/L4GcdkjT/boat_(12).jpg" onclick="openLightbox(1)" alt="Boat 2"></div>
-            <div class="photo-card"><img src="https://i.postimg.cc/ZYXGkP6x/boat_(11).jpg" onclick="openLightbox(2)" alt="Boat 3"></div>
-            <div class="photo-card"><img src="https://i.postimg.cc/8k72nXfd/boat_(2).jpg" onclick="openLightbox(3)" alt="Boat 4"></div>
-            <div class="photo-card"><img src="https://i.postimg.cc/pVmw1c5G/boat_(10).jpg" onclick="openLightbox(4)" alt="Boat 1"></div>
-            <div class="photo-card"><img src="https://i.postimg.cc/L4GcdkjT/boat_(12).jpg" onclick="openLightbox(5)" alt="Boat 2"></div>
-            <div class="photo-card"><img src="https://i.postimg.cc/ZYXGkP6x/boat_(11).jpg" onclick="openLightbox(6)" alt="Boat 3"></div>
-            <div class="photo-card"><img src="https://i.postimg.cc/8k72nXfd/boat_(2).jpg" onclick="openLightbox(7)" alt="Boat 4"></div>
+            <a href="#plava-spilja" class="photo-card">
+                <img src="https://i.postimg.cc/zfg79fgv/plavaspilja_(Large).jpg" alt="Plava Spilja">
+                <div class="card-title">Plava Špilja</div>
+            </a>
+            <a href="#mamula" class="photo-card">
+                <img src="https://i.postimg.cc/VLKKtp82/mamula_(Large).jpg" alt="Mamula">
+                <div class="card-title">Mamula</div>
+            </a>
+            <a href="#perast" class="photo-card">
+                <img src="https://i.postimg.cc/bwd39gY0/perast_(Large).jpg" alt="Perast">
+                <div class="card-title">Perast</div>
+            </a>
+            <a href="#kotor" class="photo-card">
+                <img src="https://i.postimg.cc/qMJmz09K/kotor_(Large).jpg" alt="Kotor">
+                <div class="card-title">Kotor</div>
+            </a>
+            <a href="#herceg-novi" class="photo-card">
+                <img src="https://i.postimg.cc/T19CCHWh/hercegnovi_(Large).jpg" alt="Herceg Novi">
+                <div class="card-title">Herceg Novi</div>
+            </a>
+            <a href="#rose" class="photo-card">
+                <img src="https://i.postimg.cc/LXFDRMtg/rose_(Large).jpg" alt="Rose">
+                <div class="card-title">Rose</div>
+            </a>
+            <a href="#zanjic" class="photo-card">
+                <img src="https://i.postimg.cc/3RjBxb1q/zanjic_(Large).jpg" alt="Zanjic">
+                <div class="card-title">Žanjic</div>
+            </a>
         </div>
     </section>
 
-    <section id="reserve" class="form-section">
+   </section>
+<section id="rose" class="destination-detail alt-bg">
+    <div class="detail-container">
+        <div class="detail-text">
+            <h2 class="lang" data-en="Rose Village" data-mne="Selo Rose">Rose Village</h2>
+            <p class="lang" 
+               data-en="Discover the charm of one of the oldest settlements in the bay. Rose is a quiet fisherman's village perfect for a relaxing swim and a Mediterranean lunch by the sea." 
+               data-mne="Otkrijte šarm jednog od najstarijih naselja u zalivu. Rose je mirno ribarsko selo savršeno za opuštajuće kupanje i mediteranski ručak pored mora.">
+               Discover the charm of one of the oldest settlements in the bay.
+            </p>
+            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+        </div>
+        <div class="detail-image">
+            <img src="https://i.postimg.cc/LXFDRMtg/rose_(Large).jpg" alt="Rose Village">
+        </div>
+    </div>
+</section>
+
+<section id="zanjic" class="destination-detail">
+    <div class="detail-container reverse">
+        <div class="detail-text">
+            <h2 class="lang" data-en="Žanjic Beach" data-mne="Plaža Žanjic">Žanjic Beach</h2>
+            <p class="lang" 
+               data-en="Known as the 'Presidential Beach,' Žanjic offers crystal clear water and a beautiful olive grove backdrop. It is the best spot for a full day of sun and sea." 
+               data-mne="Poznata kao 'Predsjednička plaža', Žanjic nudi kristalno čisto more i prelijep ambijent maslinjaka. Najbolje mjesto za čitav dan sunca i mora.">
+               Known as the 'Presidential Beach,' Žanjic offers crystal clear water.
+            </p>
+            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+        </div>
+        <div class="detail-image">
+            <img src="https://i.postimg.cc/3RjBxb1q/zanjic_(Large).jpg" alt="Zanjic Beach">
+        </div>
+    </div>
+</section>
+
+<section id="herceg-novi" class="destination-detail alt-bg">
+    <div class="detail-container">
+        <div class="detail-text">
+            <h2 class="lang" data-en="Herceg Novi" data-mne="Herceg Novi">Herceg Novi</h2>
+            <p class="lang" 
+               data-en="The city of 100,000 steps and mimosa flowers. Explore the historic fortresses of Forte Mare and Kanli Kula directly from the harbor." 
+               data-mne="Grad od 100.000 stepenica i cvijeća mimoze. Istražite istorijske tvrđave Forte Mare i Kanli Kula direktno iz luke.">
+               The city of 100,000 steps and mimosa flowers.
+            </p>
+            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+        </div>
+        <div class="detail-image">
+            <img src="https://i.postimg.cc/T19CCHWh/hercegnovi_(Large).jpg" alt="Herceg Novi">
+        </div>
+    </div>
+</section>
+
+<section id="mamula" class="destination-detail">
+    <div class="detail-container reverse">
+        <div class="detail-text">
+            <h2 class="lang" data-en="Mamula Island" data-mne="Ostrvo Mamula">Mamula Island</h2>
+            <p class="lang" 
+               data-en="A striking 19th-century fortress situated on a small rocky island at the entrance of Boka Bay. A must-see landmark for history and architecture lovers." 
+               data-mne="Impresivna tvrđava iz 19. vijeka smještena na malom kamenitom ostrvu na samom ulazu u Boku Kotorsku. Obavezna stanica za ljubitelje istorije i arhitekture.">
+               A striking 19th-century fortress situated on a small rocky island.
+            </p>
+            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+        </div>
+        <div class="detail-image">
+            <img src="https://i.postimg.cc/VLKKtp82/mamula_(Large).jpg" alt="Mamula Fortress">
+        </div>
+    </div>
+</section>
+
+   <section id="gallery" class="gallery-section alt-bg">
+    <h2 class="lang" data-en="Our Boat" data-mne="Naš Gliser">Our Boat</h2>
+    <div class="gallery-grid">
+        <div class="photo-card clickable" onclick="openLightbox(0)">
+            <img src="https://i.postimg.cc/pVmw1c5G/boat_(10).jpg" alt="Fortuna Boat Detail">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(1)">
+            <img src="https://i.postimg.cc/ZYXGkP6x/boat_(11).jpg" alt="Fortuna Boat Interior">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(2)">
+            <img src="https://i.postimg.cc/L4GcdkjT/boat_(12).jpg" alt="Fortuna Boat Side View">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(3)">
+            <img src="https://i.postimg.cc/8k72nXfd/boat_(2).jpg" alt="Fortuna Boat On Water">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(4)">
+            <img src="https://i.postimg.cc/QNF2nYKq/boat_(3).jpg" alt="Fortuna Boat Front">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(5)">
+            <img src="https://i.postimg.cc/BZjrw7PN/boat_(4).jpg" alt="Fortuna Boat Seating">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(6)">
+            <img src="https://i.postimg.cc/Y2v5yDLR/boat_(5).jpg" alt="Fortuna Boat Action">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(7)">
+            <img src="https://i.postimg.cc/v84JS2xK/boat_(8).jpg" alt="Fortuna Boat Cockpit">
+        </div>
+    </div>
+</section>
+
+    <section id="reserve" class="reservation-section">
         <div class="form-container">
-            <h2 class="lang" data-en="Book Your Tour" data-mne="Rezervišite Turu">Book Your Tour</h2>
-            <form action="https://formspree.io/f/your_id" method="POST">
-                <input type="text" name="name" placeholder="Name / Ime" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" rows="4" placeholder="Date and number of people..."></textarea>
-                <button type="submit" class="lang" data-en="Send Request" data-mne="Pošalji Upit">Send Request</button>
+            <h2 class="lang" data-en="Book Your Ride" data-mne="Rezervišite Vožnju">Book Your Ride</h2>
+            <form id="booking-form">
+                <input type="text" class="lang" data-en="Name" data-mne="Ime" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea class="lang" data-en="Your Message / Tour Request" data-mne="Vaša poruka / Upit za turu" placeholder="Your Message" rows="5"></textarea>
+                <button type="submit" class="btn lang" data-en="Send Request" data-mne="Pošalji Upit">Send Request</button>
             </form>
         </div>
     </section>
-<div id="lightbox" class="lightbox">
-    <span class="close-btn" onclick="closeLightbox()">&times;</span>
-    
-    <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
-    <img id="lightbox-img" src="" alt="Enlarged view">
-    <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
-</div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+        <img id="lightbox-img" src="">
+        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
