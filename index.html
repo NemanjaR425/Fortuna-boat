@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueHorizon | Boat Tours Montenegro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BlueHorizon</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="lang" data-en="Home" data-mne="Početna">Home</a></li>
+            <li><a href="#gallery" class="lang" data-en="Photos" data-mne="Slike">Photos</a></li>
+            <li><a href="#reserve" class="lang" data-en="Reserve" data-mne="Rezervacija">Reserve</a></li>
+        </ul>
+        <button id="lang-toggle">MNE</button>
+    </nav>
+
+  <header id="home" class="hero">
+    <video 
+        id="heroVideo"
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        preload="auto"
+        poster="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1600&q=80"
+        class="hero-video">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+        <h1 class="lang" data-en="Explore the Adriatic" data-mne="Istražite Jadran">Explore the Adriatic</h1>
+        <p class="lang" data-en="Unforgettable boat tours in Boka Bay." data-mne="Nezaboravne ture brodom u Boki Kotorskoj.">Unforgettable boat tours in Boka Bay.</p>
+        <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+    </div>
+</header>
+
+    <section id="gallery" class="gallery-section">
+        <h2 class="lang" data-en="Our Adventures" data-mne="Naše Avanture">Our Adventures</h2>
+        <div class="gallery-grid">
+            <div class="photo-card"><img src="https://i.postimg.cc/pVmw1c5G/boat_(10).jpg" onclick="openLightbox(0)" alt="Boat 1"></div>
+            <div class="photo-card"><img src="https://i.postimg.cc/L4GcdkjT/boat_(12).jpg" onclick="openLightbox(1)" alt="Boat 2"></div>
+            <div class="photo-card"><img src="https://i.postimg.cc/ZYXGkP6x/boat_(11).jpg" onclick="openLightbox(2)" alt="Boat 3"></div>
+            <div class="photo-card"><img src="https://i.postimg.cc/8k72nXfd/boat_(2).jpg" onclick="openLightbox(3)" alt="Boat 4"></div>
+            <div class="photo-card"><img src="https://i.postimg.cc/pVmw1c5G/boat_(10).jpg" onclick="openLightbox(4)" alt="Boat 1"></div>
+            <div class="photo-card"><img src="https://i.postimg.cc/L4GcdkjT/boat_(12).jpg" onclick="openLightbox(5)" alt="Boat 2"></div>
+            <div class="photo-card"><img src="https://i.postimg.cc/ZYXGkP6x/boat_(11).jpg" onclick="openLightbox(6)" alt="Boat 3"></div>
+            <div class="photo-card"><img src="https://i.postimg.cc/8k72nXfd/boat_(2).jpg" onclick="openLightbox(7)" alt="Boat 4"></div>
+        </div>
+    </section>
+
+    <section id="reserve" class="form-section">
+        <div class="form-container">
+            <h2 class="lang" data-en="Book Your Tour" data-mne="Rezervišite Turu">Book Your Tour</h2>
+            <form action="https://formspree.io/f/your_id" method="POST">
+                <input type="text" name="name" placeholder="Name / Ime" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" rows="4" placeholder="Date and number of people..."></textarea>
+                <button type="submit" class="lang" data-en="Send Request" data-mne="Pošalji Upit">Send Request</button>
+            </form>
+        </div>
+    </section>
+<div id="lightbox" class="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    
+    <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+    <img id="lightbox-img" src="" alt="Enlarged view">
+    <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
