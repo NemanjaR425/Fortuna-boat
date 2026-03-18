@@ -199,22 +199,25 @@ nav {
 
 .hero h1 {
     font-size: clamp(2.2rem, 5vw, 4rem);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-intro {
     font-size: 1.3rem;
-    font-weight: 700;
+    max-width: 400px;
+    font-weight: 200;
     margin-bottom: 1rem;
     color: var(--accent-blue);
 }
 
 .hero-description {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto 2rem;
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 100;
 }
+
+
 
 /* ==========================================
    5. GRIDS & CARDS
@@ -416,3 +419,35 @@ nav {
     }
 }
 
+/* ==========================================
+   NEW INTRO SECTION STYLING
+========================================== */
+.intro-section {
+    padding: 80px 10%;
+    background-color: var(--white); /* Keeps it clean and readable */
+    text-align: center;
+}
+
+.intro-container {
+    max-width: 900px; /* Prevents the lines from being too long on PC */
+    margin: 0 auto;
+}
+
+.intro-section .hero-description {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1,8;
+    font-weight: 300;
+}
+
+/* iPhone Adjustment */
+@media (max-width: 768px) {
+    .intro-section {
+        padding: 50px 7%; /* Tighter padding for mobile */
+    }
+    
+    .intro-section .hero-description {
+        font-size: 1.05rem; /* Slightly smaller font for mobile screens */
+        text-align: left;   /* Left align on mobile for easier reading */
+    }
+}
