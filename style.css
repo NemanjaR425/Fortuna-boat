@@ -46,7 +46,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 700;
     padding: 0% 20% 0% 0%;
     color: var(--primary-blue);
@@ -204,14 +204,14 @@ nav {
 
 .hero-intro {
     font-size: 1.3rem;
-    max-width: 400px;
+    max-width: 800px;
     font-weight: 200;
     margin-bottom: 1rem;
-    color: var(--accent-blue);
+    color: var(--light-bg);
 }
 
 .hero-description {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto 2rem;
     font-size: 1.1rem;
     font-weight: 100;
@@ -429,7 +429,7 @@ nav {
 }
 
 .intro-container {
-    max-width: 900px; /* Prevents the lines from being too long on PC */
+    max-width: 600px; /* Prevents the lines from being too long on PC */
     margin: 0 auto;
 }
 
@@ -437,7 +437,7 @@ nav {
     font-size: 1.2rem;
     color: #444;
     line-height: 1,8;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 /* iPhone Adjustment */
