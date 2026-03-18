@@ -12,19 +12,27 @@
 <body>
 
     <nav>
-        <div class="logo">Fortuna - Taxi Boat</div>
-        <ul class="nav-links">
-            <li><a href="#home" class="lang" data-en="Home" data-mne="Početna">Home</a></li>
-            <li><a href="#destinations" class="lang" data-en="Destinations" data-mne="Destinacije">Destinations</a></li>
-            <li><a href="#gallery" class="lang" data-en="Gallery" data-mne="Galerija">Gallery</a></li>
-            <li><a href="#reserve" class="lang" data-en="Reserve" data-mne="Rezervacija">Reserve</a></li>
-        </ul>
-        <button id="lang-toggle">MNE</button>
-    </nav>
+    <div class="logo">Fortuna - Taxi Boat</div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home" class="lang" data-en="Home" data-mne="Početna">Home</a></li>
+        <li><a href="#destinations" class="lang" data-en="Destinations" data-mne="Destinacije">Destinations</a></li>
+        <li><a href="#gallery" class="lang" data-en="Gallery" data-mne="Galerija">Gallery</a></li>
+        <li><a href="#reserve" class="lang" data-en="Reserve" data-mne="Rezervacija">Reserve</a></li>
+    </ul>
+
+    <button id="lang-toggle">MNE</button>
+</nav>
 
     <header id="home" class="hero">
         <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-video">
-            <source src="https://github.com/NemanjaR425/Fortuna-boat/blob/281810c66dda9f68e24c4db263a35d89f48e3d84/Intro%20Demo(1).mp4" type="video/mp4">
+            <source src="https://res.cloudinary.com/du5ghdlzk/video/upload/v1773751284/Intro_Demo_1_ukag93.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -54,7 +62,7 @@
         <div class="gallery-grid">
             <a href="#plava-spilja" class="photo-card">
                 <img src="https://i.postimg.cc/zfg79fgv/plavaspilja_(Large).jpg" alt="Plava Spilja">
-                <div class="card-title">Plava Špilja</div>
+                <div class="card-title">Plava Špilja (Blue Cave)</div>
             </a>
             <a href="#mamula" class="photo-card">
                 <img src="https://i.postimg.cc/VLKKtp82/mamula_(Large).jpg" alt="Mamula">
