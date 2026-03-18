@@ -1,371 +1,219 @@
-/* ==========================================
-   1. VARIABLES & RESET
-========================================== */
-:root {
-    --primary-blue: #0077b6;
-    --dark-navy: #03045e;
-    --accent-blue: #caf0f8;
-    --white: #ffffff;
-    --light-bg: #f8f9fa;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--light-bg);
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* ==========================================
-   2. NAVIGATION & HAMBURGER (The Fix)
-========================================== */
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-    background: var(--white);
-    position: sticky;
-    top: 0;
-    box-shadow: var(--shadow);
-    z-index: 1000;
-    height: 70px;
-}
-
-.logo {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary-blue);
-    white-space: nowrap;
-}
-
-/* Desktop Links */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark-navy);
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--primary-blue);
-}
-
-/* Hamburger Icon - Defined clearly so it's not invisible */
-.menu-toggle {
-    display: none; 
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1100;
-}
-
-.bar {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--dark-navy); /* Dark blue bars */
-    border-radius: 10px;
-    transition: var(--transition);
-}
-
-#lang-toggle {
-    background: #101330;
-    color: white;
-    border: none;
-    padding: 6px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: var(--transition);
-    margin-left: 20px;
-}
-
-/* ==========================================
-   3. MOBILE NAVIGATION (The Fix)
-========================================== */
-/* ==========================================
-   MOBILE NAVIGATION FIX
-========================================== */
-@media (max-width: 992px) {
-    /* 1. Show the hamburger icon */
-    .menu-toggle {
-        display: flex !important;
-    }
-
-    /* 2. Fix the sliding container */
-   .nav-links {
-        display: none; /* Hidden until toggled */
-        flex-direction: column !important;
-        
-        /* 1. RESET THE DESKTOP CENTERING */
-        position: fixed !important;
-        left: 0 !important; /* Forces it to the left edge */
-        transform: none !important; /* Removes the "center" shift */
-        
-        /* 2. ALIGNMENT */
-        align-items: flex-start !important; /* Pulls items to the left */
-        text-align: left !important;
-        padding: 40px 0 40px 10% !important; /* 10% gap from the left edge */
-
-        /* 3. DIMENSIONS */
-        top: 70px;
-        width: 100% !important;
-        background-color: var(--white);
-        z-index: 1000;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active {
-        display: flex !important;
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-        width: 100%;
-        display: block !important;
-    }
-
-    .nav-links a {
-        font-size: 1.3rem;
-        color: var(--dark-navy) !important;
-        text-decoration: none;
-        display: block; /* Makes the whole line clickable */
-    }
-}
-
-/* ==========================================
-   4. HERO SECTION
-========================================== */
-.hero {
-    position: relative;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: #000;
-}
-
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 1;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    color: var(--white);
-    padding: 0 5%;
-}
-
-.hero h1 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    margin-bottom: 1.5rem;
-}
-
-.hero-intro {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--accent-blue);
-}
-
-.hero-description {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    font-size: 1.1rem;
-    font-weight: 300;
-}
-
-/* ==========================================
-   5. GRIDS & CARDS
-========================================== */
-.gallery-section { padding: 80px 5%; text-align: center; }
-.alt-bg { background: #f0f4f8; }
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.photo-card {
-    position: relative;
-    height: 300px;
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-}
-
-.photo-card img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: 0.5s ease;
-}
-
-.photo-card::after {
-    content: "";
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%; height: 60%;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-}
-
-.card-title {
-    position: absolute;
-    bottom: 20px; left: 20px;
-    color: white; font-weight: 600; z-index: 2;
-}
-
-/* ==========================================
-   6. DESTINATION DETAILS
-========================================== */
-.destination-detail { padding: 80px 5%; }
-.detail-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.detail-container.reverse { flex-direction: row-reverse; }
-
-.detail-text { flex: 1; text-align: left; }
-.detail-text h2 { font-size: 2.5rem; color: var(--dark-navy); margin-bottom: 20px; }
-.detail-text p { margin-bottom: 50px; font-size: 1.1rem; }
-
-.detail-image { flex: 1; }
-.detail-image img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
-
-/* ==========================================
-   7. RESERVATION & LIGHTBOX
-========================================== */
-.reservation-section { padding: 80px 5%; background: var(--dark-navy); color: white; text-align: center; }
-.form-container { max-width: 500px; margin: 0 auto; }
-#booking-form { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
-#booking-form input, #booking-form textarea { padding: 12px; border-radius: 8px; border: none; width: 100%; }
-
-.btn { 
-    background: var(--primary-blue); color: white; border: none; 
-    padding: 12px 30px; border-radius: 30px; font-weight: 600; 
-    cursor: pointer; text-decoration: none; display: inline-block;
-}
-
-/* ==========================================
-   ENHANCED FULL-SCREEN LIGHTBOX
-========================================== */
-.lightbox {
-    display: none; /* Hidden until clicked */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.95); /* Deeper black for better photo contrast */
-    z-index: 9999; /* Higher than the nav bar */
-    justify-content: center;
-    align-items: center;
-    cursor: zoom-out; /* Indicates clicking closes it */
-}
-
-#lightbox-img {
-    /* Increase these percentages to fill the screen */
-    max-width: 95%; 
-    max-height: 90vh; 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortuna - Taxi Boat | Montenegro Tours</title>
     
-    width: auto;
-    height: auto;
-    object-fit: contain; /* Prevents cropping the drone shot */
-    border-radius: 4px;
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    /* Smooth fade-in when switching images */
-    transition: opacity 0.3s ease;
-}
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* Positioning the Close Button */
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: var(--white);
-    font-size: 50px;
-    font-weight: 200;
-    cursor: pointer;
-    z-index: 10001;
-}
+    <nav>
+    <div class="logo">Fortuna - Taxi Boat</div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
-/* Arrow Buttons for Navigation */
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    padding: 20px 15px;
-    font-size: 30px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
+    <div class="detail-container">
+    <div class="detail-image"> </div>
+    <div class="detail-text"> </div>
+</div>
 
-.prev-btn { left: 20px; }
-.next-btn { right: 20px; }
+    <ul class="nav-links">
+        <li><a href="#home" class="lang" data-en="Home" data-mne="Početna">Home</a></li>
+        <li><a href="#destinations" class="lang" data-en="Destinations" data-mne="Destinacije">Destinations</a></li>
+        <li><a href="#gallery" class="lang" data-en="Gallery" data-mne="Galerija">Gallery</a></li>
+        <li><a href="#reserve" class="lang" data-en="Reserve" data-mne="Rezervacija">Reserve</a></li>
+    </ul>
 
-.prev-btn:hover, .next-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
+    <button id="lang-toggle">MNE</button>
+</nav>
 
-/* Mobile Fix: Make arrows smaller so they don't cover the photo */
-@media (max-width: 768px) {
-    #lightbox-img {
-        max-width: 98%;
-        max-height: 80vh;
-    }
-    .prev-btn, .next-btn {
-        padding: 10px;
-        font-size: 20px;
-    }
-}
+    <header id="home" class="hero">
+        <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-video">
+            <source src="https://res.cloudinary.com/du5ghdlzk/video/upload/v1773751284/Intro_Demo_1_ukag93.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-content">
+    <h1 class="lang" data-en="Fortuna - Taxi Boat" data-mne="Fortuna - Taxi Boat">
+        Fortuna - Taxi Boat
+    </h1>
+
+    <p class="hero-intro lang" 
+       data-en="Fast and reliable boat transfers and tours in the heart of Boka Bay." 
+       data-mne="Brzi i pouzdani transferi i ture brodom u srcu Boke Kotorske.">
+       <strong>Fast and reliable boat transfers and tours in the heart of Boka Bay.</strong>
+    </p>
+
+    <p class="hero-description lang" 
+       data-en="Welcome to your gateway to the Adriatic! Whether you’re chasing the hidden glow of the Blue Cave or looking to soak in the medieval charm of Herceg Novi, we provide the ultimate boat taxi experience in one of the world’s most stunning bays. Skip the traffic and embrace the breeze. We specialize in fast, reliable, and scenic transfers that turn a simple commute into the highlight of your holiday."
+       data-mne="Dobrodošli na vašu kapiju Jadrana! Bilo da tražite skriveni sjaj Plave Špilje ili želite da uživate u srednjovjekovnom šarmu Herceg Novog, pružamo vam vrhunsko iskustvo taxi broda u jednom od najljepših zaliva na svijetu. Izbjegnite gužvu u saobraćaju i prepustite se povjetarcu. Specijalizovani smo za brze, pouzdane i slikovite transfere koji običnu vožnju pretvaraju u vrhunac vašeg odmora.">
+       Welcome to your gateway to the Adriatic! Whether you’re chasing the hidden glow of the Blue Cave or looking to soak in the medieval charm of Herceg Novi, we provide the ultimate boat taxi experience in one of the world’s most stunning bays. Skip the traffic and embrace the breeze. We specialize in fast, reliable, and scenic transfers that turn a simple commute into the highlight of your holiday.
+    </p>
+
+    <a href="#destinations" class="btn lang" data-en="Explore Tours" data-mne="Istražite izlete">Explore Tours</a>
+</div>
+    </header>
+
+    <section id="destinations" class="gallery-section">
+        <h2 class="lang" data-en="Our Destinations" data-mne="Naše Destinacije">Our Destinations</h2>
+        <div class="gallery-grid">
+            <a href="#plava-spilja" class="photo-card">
+                <img src="https://i.postimg.cc/zfg79fgv/plavaspilja_(Large).jpg" alt="Plava Spilja">
+                <div class="card-title">Plava Špilja (Blue Cave)</div>
+            </a>
+            <a href="#mamula" class="photo-card">
+                <img src="https://i.postimg.cc/VLKKtp82/mamula_(Large).jpg" alt="Mamula">
+                <div class="card-title">Mamula</div>
+            </a>
+            <a href="#perast" class="photo-card">
+                <img src="https://i.postimg.cc/bwd39gY0/perast_(Large).jpg" alt="Perast">
+                <div class="card-title">Perast</div>
+            </a>
+            <a href="#kotor" class="photo-card">
+                <img src="https://i.postimg.cc/qMJmz09K/kotor_(Large).jpg" alt="Kotor">
+                <div class="card-title">Kotor</div>
+            </a>
+            <a href="#herceg-novi" class="photo-card">
+                <img src="https://i.postimg.cc/T19CCHWh/hercegnovi_(Large).jpg" alt="Herceg Novi">
+                <div class="card-title">Herceg Novi</div>
+            </a>
+            <a href="#rose" class="photo-card">
+                <img src="https://i.postimg.cc/LXFDRMtg/rose_(Large).jpg" alt="Rose">
+                <div class="card-title">Rose</div>
+            </a>
+            <a href="#zanjic" class="photo-card">
+                <img src="https://i.postimg.cc/3RjBxb1q/zanjic_(Large).jpg" alt="Zanjic">
+                <div class="card-title">Žanjic</div>
+            </a>
+        </div>
+    </section>
+
+   </section>
+<section id="rose" class="destination-detail alt-bg">
+    <div class="detail-container">
+        <div class="detail-text">
+            <h2 class="lang" data-en="Rose Village" data-mne="Selo Rose">Rose Village</h2>
+            <p class="lang" 
+               data-en="Discover the charm of one of the oldest settlements in the bay. Rose is a quiet fisherman's village perfect for a relaxing swim and a Mediterranean lunch by the sea." 
+               data-mne="Otkrijte šarm jednog od najstarijih naselja u zalivu. Rose je mirno ribarsko selo savršeno za opuštajuće kupanje i mediteranski ručak pored mora.">
+               Discover the charm of one of the oldest settlements in the bay.
+            </p>
+            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+        </div>
+        <div class="detail-image">
+            <img src="https://i.postimg.cc/LXFDRMtg/rose_(Large).jpg" alt="Rose Village">
+        </div>
+    </div>
+</section>
+
+<section id="zanjic" class="destination-detail">
+    <div class="detail-container reverse">
+        <div class="detail-text">
+            <h2 class="lang" data-en="Žanjic Beach" data-mne="Plaža Žanjic">Žanjic Beach</h2>
+            <p class="lang" 
+               data-en="Known as the 'Presidential Beach,' Žanjic offers crystal clear water and a beautiful olive grove backdrop. It is the best spot for a full day of sun and sea." 
+               data-mne="Poznata kao 'Predsjednička plaža', Žanjic nudi kristalno čisto more i prelijep ambijent maslinjaka. Najbolje mjesto za čitav dan sunca i mora.">
+               Known as the 'Presidential Beach,' Žanjic offers crystal clear water.
+            </p>
+            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+        </div>
+        <div class="detail-image">
+            <img src="https://i.postimg.cc/3RjBxb1q/zanjic_(Large).jpg" alt="Zanjic Beach">
+        </div>
+    </div>
+</section>
+
+<section id="herceg-novi" class="destination-detail alt-bg">
+    <div class="detail-container">
+        <div class="detail-text">
+            <h2 class="lang" data-en="Herceg Novi" data-mne="Herceg Novi">Herceg Novi</h2>
+            <p class="lang" 
+               data-en="The city of 100,000 steps and mimosa flowers. Explore the historic fortresses of Forte Mare and Kanli Kula directly from the harbor." 
+               data-mne="Grad od 100.000 stepenica i cvijeća mimoze. Istražite istorijske tvrđave Forte Mare i Kanli Kula direktno iz luke.">
+               The city of 100,000 steps and mimosa flowers.
+            </p>
+            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+        </div>
+        <div class="detail-image">
+            <img src="https://i.postimg.cc/T19CCHWh/hercegnovi_(Large).jpg" alt="Herceg Novi">
+        </div>
+    </div>
+</section>
+
+<section id="mamula" class="destination-detail">
+    <div class="detail-container reverse">
+        <div class="detail-text">
+            <h2 class="lang" data-en="Mamula Island" data-mne="Ostrvo Mamula">Mamula Island</h2>
+            <p class="lang" 
+               data-en="A striking 19th-century fortress situated on a small rocky island at the entrance of Boka Bay. A must-see landmark for history and architecture lovers." 
+               data-mne="Impresivna tvrđava iz 19. vijeka smještena na malom kamenitom ostrvu na samom ulazu u Boku Kotorsku. Obavezna stanica za ljubitelje istorije i arhitekture.">
+               A striking 19th-century fortress situated on a small rocky island.
+            </p>
+            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+        </div>
+        <div class="detail-image">
+            <img src="https://i.postimg.cc/VLKKtp82/mamula_(Large).jpg" alt="Mamula Fortress">
+        </div>
+    </div>
+</section>
+
+   <section id="gallery" class="gallery-section alt-bg">
+    <h2 class="lang" data-en="Our Boat" data-mne="Naš Gliser">Our Boat</h2>
+    <div class="gallery-grid">
+        <div class="photo-card clickable" onclick="openLightbox(0)">
+            <img src="https://i.postimg.cc/pVmw1c5G/boat_(10).jpg" alt="Fortuna Boat Detail">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(1)">
+            <img src="https://i.postimg.cc/ZYXGkP6x/boat_(11).jpg" alt="Fortuna Boat Interior">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(2)">
+            <img src="https://i.postimg.cc/L4GcdkjT/boat_(12).jpg" alt="Fortuna Boat Side View">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(3)">
+            <img src="https://i.postimg.cc/8k72nXfd/boat_(2).jpg" alt="Fortuna Boat On Water">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(4)">
+            <img src="https://i.postimg.cc/QNF2nYKq/boat_(3).jpg" alt="Fortuna Boat Front">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(5)">
+            <img src="https://i.postimg.cc/BZjrw7PN/boat_(4).jpg" alt="Fortuna Boat Seating">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(6)">
+            <img src="https://i.postimg.cc/Y2v5yDLR/boat_(5).jpg" alt="Fortuna Boat Action">
+        </div>
+        <div class="photo-card clickable" onclick="openLightbox(7)">
+            <img src="https://i.postimg.cc/v84JS2xK/boat_(8).jpg" alt="Fortuna Boat Cockpit">
+        </div>
+    </div>
+</section>
+
+    <section id="reserve" class="reservation-section">
+        <div class="form-container">
+            <h2 class="lang" data-en="Book Your Ride" data-mne="Rezervišite Vožnju">Book Your Ride</h2>
+            <form id="booking-form">
+                <input type="text" class="lang" data-en="Name" data-mne="Ime" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea class="lang" data-en="Your Message / Tour Request" data-mne="Vaša poruka / Upit za turu" placeholder="Your Message" rows="5"></textarea>
+                <button type="submit" class="btn lang" data-en="Send Request" data-mne="Pošalji Upit">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+        <img id="lightbox-img" src="">
+        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
