@@ -211,10 +211,10 @@ nav {
 }
 
 .hero-description {
-    max-width: 900px;
+    max-width: 1800px;
     margin: 0 auto 2rem;
     font-size: 1.1rem;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 
@@ -449,5 +449,95 @@ nav {
     .intro-section .hero-description {
         font-size: 1.05rem; /* Slightly smaller font for mobile screens */
         text-align: left;   /* Left align on mobile for easier reading */
+    }
+}
+/* ==========================================
+   RESERVATION SECTION (2-COLUMN LAYOUT)
+========================================== */
+.reservation-section {
+    padding: 80px 5%;
+    background: #03045e; /* Your dark navy */
+    color: white;
+}
+
+.reservation-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+    align-items: stretch; /* Makes both boxes the same height */
+}
+
+/* The White Box for Company Info */
+.company-info-box {
+    flex: 1;
+    border: 0px solid white;
+    padding: 40px;
+    border-radius: 5px; /* Sharp edges like your image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-info-box .logo {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    width: 30px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: left;
+    opacity: 0.7;
+}
+
+/* The Form Side */
+.form-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.form-wrapper h3 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+#booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#booking-form input, 
+#booking-form textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-family: inherit;
+}
+
+/* iPhone Fix: Stack the info box on top of the form */
+@media (max-width: 768px) {
+    .reservation-container {
+        flex-direction: column;
+    }
+    
+    .company-info-box {
+        padding: 30px 20px;
     }
 }
