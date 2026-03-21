@@ -29,7 +29,7 @@
         <li><a href="#home" class="lang" data-en="Home" data-mne="Početna">Home</a></li>
         <li><a href="#destinations" class="lang" data-en="Destinations" data-mne="Destinacije">Destinations</a></li>
         <li><a href="#gallery" class="lang" data-en="Gallery" data-mne="Galerija">Gallery</a></li>
-        <li><a href="#reserve" class="lang" data-en="Reserve" data-mne="Rezervacija">Reserve</a></li>
+        <li><a href="#booking-form" class="lang" data-en="Reserve" data-mne="Rezervacija">Reserve</a></li>
     </ul>
 
     <button id="lang-toggle">MNE</button>
@@ -104,7 +104,7 @@
                data-mne="Otkrijte šarm jednog od najstarijih naselja u zalivu. Rose je mirno ribarsko selo savršeno za opuštajuće kupanje i mediteranski ručak pored mora.">
                Discover the charm of one of the oldest settlements in the bay.
             </p>
-            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+            <a href="#booking-form" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
         </div>
         <div class="detail-image">
             <img src="https://i.postimg.cc/LXFDRMtg/rose_(Large).jpg" alt="Rose Village">
@@ -121,7 +121,7 @@
                data-mne="Poznata kao 'Predsjednička plaža', Žanjic nudi kristalno čisto more i prelijep ambijent maslinjaka. Najbolje mjesto za čitav dan sunca i mora.">
                Known as the 'Presidential Beach,' Žanjic offers crystal clear water.
             </p>
-            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+            <a href="#booking-form" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
         </div>
         <div class="detail-image">
             <img src="https://i.postimg.cc/3RjBxb1q/zanjic_(Large).jpg" alt="Zanjic Beach">
@@ -138,7 +138,7 @@
                data-mne="Grad od 100.000 stepenica i cvijeća mimoze. Istražite istorijske tvrđave Forte Mare i Kanli Kula direktno iz luke.">
                The city of 100,000 steps and mimosa flowers.
             </p>
-            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+            <a href="#booking-form" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
         </div>
         <div class="detail-image">
             <img src="https://i.postimg.cc/T19CCHWh/hercegnovi_(Large).jpg" alt="Herceg Novi">
@@ -155,7 +155,7 @@
                data-mne="Impresivna tvrđava iz 19. vijeka smještena na malom kamenitom ostrvu na samom ulazu u Boku Kotorsku. Obavezna stanica za ljubitelje istorije i arhitekture.">
                A striking 19th-century fortress situated on a small rocky island.
             </p>
-            <a href="#reserve" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
+            <a href="#booking-form" class="btn lang" data-en="Book Now" data-mne="Rezerviši">Book Now</a>
         </div>
         <div class="detail-image">
             <img src="https://i.postimg.cc/VLKKtp82/mamula_(Large).jpg" alt="Mamula Fortress">
@@ -201,36 +201,47 @@
             <div class="info-item">
                 <i class="fas fa-phone"></i>
                 <div>
-                    <strong>Call Us</strong>
+                    <strong class="lang" data-en="Call Us" data-mne="Pozovite nas">Call Us</strong>
                     <p>+382 60 000 000</p>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fab fa-whatsapp"></i>
                 <div>
-                    <strong>WhatsApp / Viber</strong>
+                    <strong class="lang" data-en="WhatsApp / Viber" data-mne="WhatsApp / Viber">WhatsApp / Viber</strong>
                     <p>+382 60 000 000</p>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-map-marker-alt"></i>
                 <div>
-                    <strong>Location</strong>
+                    <strong class="lang" data-en="Location" data-mne="Lokacija">Location</strong>
                     <p>Herceg Novi, Montenegro</p>
                 </div>
             </div>
         </div>
 
         <div class="form-wrapper">
-            <h3>Book Your Ride</h3>
-            <form id="booking-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Your Message" rows="4"></textarea>
-                <button type="submit" class="btn">Send Request</button>
+            <h3 class="lang" data-en="Book Your Ride" data-mne="Rezervišite vožnju">Book Your Ride</h3>
+            <form id="booking-form" action="https://formspree.io/f/mlgpvgyp" method="POST">
+                <input type="text" name="name" class="lang-input" 
+                       data-en-place="Name" data-mne-place="Ime i prezime" placeholder="Name" required>
+                
+                <input type="email" name="email" class="lang-input" 
+                       data-en-place="Email" data-mne-place="Email adresa" placeholder="Email" required>
+                
+                <textarea name="message" class="lang-input" 
+                          data-en-place="Your Message" data-mne-place="Vaša poruka" placeholder="Your Message" rows="4"></textarea>
+                
+                <button type="submit" class="btn lang" data-en="Send Request" data-mne="Pošalji zahtjev">Send Request</button>
             </form>
+
             <div id="form-success" style="display:none; margin-top:20px;">
-                <p>Thank you! We will get back to you shortly.</p>
+                <p class="lang" 
+                   data-en="Thank you! We will get back to you shortly." 
+                   data-mne="Hvala! Javićemo vam se ubrzo.">
+                   Thank you! We will get back to you shortly.
+                </p>
             </div>
         </div>
 
